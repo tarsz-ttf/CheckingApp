@@ -1,4 +1,7 @@
+import 'package:checkingapp/qr_screen.dart';
 import 'package:flutter/material.dart';
+
+import 'cleaning_schedule.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,7 +34,16 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final String kod = 'https://example.com'; // QR-kóddá alakítandó szöveg vagy URL
+  final Map<String, String> nyelvMap = {
+    "hu": "assets/flag_hun.png",
+  };
+  String flag = "assets/flag_hun.png";
+  final List<String> nyelvek = ['hu'];
+  String selectedOption = 'hu';
+
   int myc = 0;
+  String _selectedLocaleId = "HUN";
 
   void _incrementCounter() {
     setState(() {
@@ -46,28 +58,108 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
 
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        leading:ElevatedButton(onPressed: (){
+          print("menu pressed");
+        }, child: Icon(Icons.menu)),
 
         title: Text(widget.title),
+
+        actions: <Widget>[
+          ElevatedButton(onPressed: (){
+            print("Settings pressed");
+          }, child: Icon(Icons.settings))
+        ],
+        
       ),
+      
+      
+      
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
         child: Column(
-
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            ElevatedButton(
+
+
+
+            Container(
+              width: 250,
+              height: 75,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => QRScreen(kod: kod),
+                    ),
+                  );
+                },
+                child: Text("Check In")),),
+
+            SizedBox(height: 50),
+
+            Container(
+              width: 250,
+              height: 75,
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => QRScreen(kod: kod),
+                      ),
+                    );
+                  },
+                child: Text("Check Out")),),
+
+            SizedBox(height: 50),
+
+            Container(
+              width: 250,
+              height: 75,
+              child: ElevatedButton(
                 onPressed: () {
 
-            },
-                child: Text("First Commit"))
+                },
+                child: Text("Settings")),),
+
+            SizedBox(height: 50),
+
+            Container(
+              width: 250,
+              height: 75,
+              child: ElevatedButton(
+                  onPressed: () {
+
+                  },
+                  child: Text("Help")),),
+
+            SizedBox(height: 50),
+
+            Container(
+              width: 250,
+              height: 75,
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => CleaningScheduleScreen(),
+                      ),
+                    );
+                  },
+                  child: Text("Schedule Cleaing")),),
+
+
+
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        child: const Icon(Icons.help),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
