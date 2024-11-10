@@ -14,7 +14,7 @@ class _CleaningScheduleScreenState extends State<CleaningScheduleScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Takarítás Időpontfoglalás'),
+        title: Text('Schedule Cleaning'),
       ),
       body: Column(
         children: [
@@ -44,12 +44,12 @@ class _CleaningScheduleScreenState extends State<CleaningScheduleScreen> {
                 // Például: itt kezelheted a foglalást, vagy elmentheted az adatokat
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
-                    content: Text('Időpont jóváhagyva: ${_selectedDate.toString()}'),
+                    content: Text('Approve time: ${_selectedDate.toString()}'),
                   ),
                 );
               }
                   : null, // a gomb csak akkor aktív, ha van kiválasztott dátum
-              child: Text('Időpont Jóváhagyása'),
+              child: Text('Approve time'),
             ),
           ),
         ],

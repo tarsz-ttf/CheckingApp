@@ -96,32 +96,37 @@ class _IssuesScreenState extends State<IssuesScreen> {
   // Minta videó lista (ide jöhetnek a tutorial videók URL-jei, címek)
   final List<Map<String, String>> _videos = [
     {
-      'title': 'Check-in probléma megoldása',
+      'title': 'Where I should park',
+      'thumbnail': 'https://cf.bstatic.com/static/img/theme-index/bg_parking/c589ce705b17690d8a788064703af2071d568cbc.jpg',
+      'url': 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    },
+    {
+      'title': 'Issues at check-in',
       'thumbnail': 'https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg',
       'url': 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     },
     {
-      'title': 'Check-out tippek és trükkök',
+      'title': 'How to check out',
       'thumbnail': 'https://img.youtube.com/vi/3JZ_D3ELwOQ/0.jpg',
       'url': 'https://www.youtube.com/watch?v=3JZ_D3ELwOQ',
     },
     {
-      'title': 'Check-in probléma megoldása',
+      'title': 'Where to eat',
       'thumbnail': 'https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg',
       'url': 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     },
     {
-      'title': 'Check-out tippek és trükkök',
+      'title': 'What to visit',
       'thumbnail': 'https://img.youtube.com/vi/3JZ_D3ELwOQ/0.jpg',
       'url': 'https://www.youtube.com/watch?v=3JZ_D3ELwOQ',
     },
     {
-      'title': 'Check-in probléma megoldása',
+      'title': 'Best neighbourhoods',
       'thumbnail': 'https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg',
       'url': 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
     },
     {
-      'title': 'Check-out tippek és trükkök',
+      'title': 'Request room clean',
       'thumbnail': 'https://img.youtube.com/vi/3JZ_D3ELwOQ/0.jpg',
       'url': 'https://www.youtube.com/watch?v=3JZ_D3ELwOQ',
     },
@@ -137,7 +142,7 @@ class _IssuesScreenState extends State<IssuesScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Felmerülő Problémák Megoldása'),
+        title: Text('Solutions For The Common Issues'),
       ),
       body: Column(
         children: [
@@ -147,7 +152,7 @@ class _IssuesScreenState extends State<IssuesScreen> {
             child: TextField(
               controller: _searchController,
               decoration: InputDecoration(
-                hintText: 'Keresés problémák között...',
+                hintText: 'Search for a problem...',
                 prefixIcon: Icon(Icons.search),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8),

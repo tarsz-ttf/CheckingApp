@@ -2,19 +2,19 @@
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
-class QRScreen extends StatelessWidget {
+class QRScreen2 extends StatelessWidget {
   final String kod;
   final String name;
   final String id;
   final String date;
 
-  QRScreen({required this.kod, required this.name, required this.id, required this.date});
+  QRScreen2({required this.kod, required this.name, required this.id, required this.date});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Check-in By QR Code'),
+        title: Text('Check-out By QR Code'),
       ),
       body:
       Center(
@@ -30,7 +30,7 @@ class QRScreen extends StatelessWidget {
               width: 250,
             color: Colors.blueGrey,
                 child: Row( mainAxisAlignment: MainAxisAlignment.center, crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [Text('Scan this QR code \n at the kiosk for check-in \n or show it at the reception',style:TextStyle(color: Colors.white)),],)
+                  children: [Text('Mutasd Meg ezt a QR kodot \n a KIOSK-nak a check-IN-hez \n vagy a recepciosnak',style:TextStyle(color: Colors.white)),],)
             ),
             SizedBox(height: 70),
             Container(
