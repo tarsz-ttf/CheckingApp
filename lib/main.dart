@@ -1,6 +1,7 @@
 import 'package:checkingapp/qr_screen.dart';
 import 'package:flutter/material.dart';
 
+import 'IssuesScreen.dart';
 import 'cleaning_schedule.dart';
 
 void main() {
@@ -34,6 +35,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  String name = "Adam";
+  String IDnum = "NH027735";
+  String szuldate = "1992-11-01";
   final String kod = 'https://example.com'; // QR-kóddá alakítandó szöveg vagy URL
   final Map<String, String> nyelvMap = {
     "hu": "assets/flag_hun.png",
@@ -131,9 +135,14 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 75,
               child: ElevatedButton(
                   onPressed: () {
-
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => IssuesScreen(),
+                      ),
+                    );
                   },
-                  child: Text("Help")),),
+                  child: Text("Help in Issues")),),
 
             SizedBox(height: 50),
 
